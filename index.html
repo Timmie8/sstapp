@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn App - Desktop & Mobiel</title>
+    <style>
+        /* Basis styling */
+        body, html { 
+            margin: 0; padding: 0; height: 100%; 
+            background-color: #1a1a1a; /* Donkere achtergrond voor PC */
+            display: flex; justify-content: center; 
+        }
+
+        /* De 'container' die de app op PC smal houdt, maar op mobiel breed */
+        .app-container {
+            width: 100%;
+            max-width: 500px; /* Maximale breedte op een laptop */
+            height: 100vh;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #loading {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif; color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div id="loading">Laden...</div>
+        <iframe 
+            src="" 
+            allow="camera; microphone; geolocation"
+            onload="document.getElementById('loading').style.display='none';">
+        </iframe>
+    </div>
+
+</body>
+</html>
+
+
+
