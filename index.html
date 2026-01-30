@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn App - Desktop & Mobiel</title>
+    <title>Webapp - Desktop Versie</title>
     <style>
-        /* Basis styling */
+        /* Zorgt voor een nette presentatie op computers */
         body, html { 
             margin: 0; padding: 0; height: 100%; 
-            background-color: #1a1a1a; /* Donkere achtergrond voor PC */
-            display: flex; justify-content: center; 
+            background-color: #121212; /* Donkere achtergrond */
+            display: flex; justify-content: center; align-items: center;
+            font-family: sans-serif;
         }
-
-        /* De 'container' die de app op PC smal houdt, maar op mobiel breed */
-        .app-container {
+        .app-frame-container {
             width: 100%;
-            max-width: 500px; /* Maximale breedte op een laptop */
-            height: 100vh;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            max-width: 450px; /* Houdt het app-formaat op laptops */
+            height: 95vh;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
         }
-
         iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-
-        #loading {
+        #status {
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            font-family: Arial, sans-serif; color: #333;
+            z-index: -1; color: #666;
         }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
-        <div id="loading">Laden...</div>
+    <div class="app-frame-container">
+        <div id="status">Bezig met verbinden...</div>
         <iframe 
             src="https://www.appcreator24.com/app3882744" 
-            allow="camera; microphone; geolocation"
-            onload="document.getElementById('loading').style.display='none';">
+            sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+            allow="fullscreen; geolocation; microphone; camera">
         </iframe>
     </div>
 
 </body>
 </html>
+
 
 
